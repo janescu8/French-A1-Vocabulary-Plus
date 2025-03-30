@@ -18,7 +18,7 @@ book_options = {
 }
 
 # 標題與選書
-st.title("📚 法文單字測試遊戲")
+st.title("📚 英文單字測試遊戲")
 selected_book = st.selectbox("請選擇一本書：", list(book_options.keys()))
 word_data = book_options[selected_book]
 st.write(f"📖 單字庫總數：{len(word_data)} 個單字")
@@ -48,12 +48,11 @@ def play_pronunciation(text, mp3="pronunciation.mp3", wav="pronunciation.wav"):
 def clean_text(t):
     return re.sub(r"[^a-zA-ZÀ-ÿ’'\- ]", '', text).lower().strip()
 
-# 初始化狀態
+# 初始化狀態，只在選書或題數變更時才重新抽題
 if (
     "initialized" not in st.session_state
     or st.session_state.selected_book != selected_book
     or st.session_state.num_questions != num_questions
-    or st.session_state.test_type != test_type
 ):
     st.session_state.words = get_unique_words(num_questions)
     st.session_state.current_index = 0
@@ -61,10 +60,12 @@ if (
     st.session_state.mistakes = []
     st.session_state.submitted = False
     st.session_state.input_value = ""
-    st.session_state.selected_book = selected_book
-    st.session_state.num_questions = num_questions
-    st.session_state.test_type = test_type
     st.session_state.initialized = True
+
+# 每次都更新目前測驗類型（不影響抽題）
+st.session_state.selected_book = selected_book
+st.session_state.num_questions = num_questions
+st.session_state.test_type = test_type
 
 # 顯示題目
 if st.session_state.current_index < len(st.session_state.words):
@@ -122,18 +123,19 @@ if st.session_state.current_index < len(st.session_state.words):
                     st.write(result)
                     st.session_state.score += 1
                 except Exception:
-                    st.error(f"⚠️ 發生錯誤：{e}")
+                    st.error("⚠️ OpenAI API 請求過於頻繁或配額已用盡，請稍後再試！")
                     st.stop()
-    
+
         st.session_state.input_value = ""
-        time.sleep(2)
-        st.session_state.submitted = False
-        st.session_state.current_index += 1
-        st.rerun()
+
+        if st.button("👉 下一題"):
+            st.session_state.submitted = False
+            st.session_state.current_index += 1
+            st.rerun()
 
 # 測驗結束畫面
 else:
-    st.write(f"🎉 測試結束！你的得分：{st.session_state.score}/{len(st.session_state.words)}")
+    st.write(f"🎉 測試結束！共回答 {len(st.session_state.words)} 題")
 
     if st.session_state.mistakes and test_type != "單字造句":
         st.write("❌ 你答錯的單字：")
