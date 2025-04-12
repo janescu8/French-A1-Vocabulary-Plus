@@ -19,11 +19,11 @@ word_data = {
     "improviser": ("即興發揮", "Il aime improviser en classe."),
     "prononcent faux": ("發音錯", "Les élèves prononcent ce mot faux."),
     "une partie du corps": ("身體的一部分", "La main est une partie du corps."),
-    "le foi": ("肝臟", "Le foie est un organe important."),  # 注意：la foi（信仰） vs le foie（肝臟）不同詞！
+    "le foie": ("肝臟", "Le foie est un organe important."),  # 注意：la foi（信仰） vs le foie（肝臟）不同詞！
     "intuitif": ("直覺的", "L’enfant est très intuitif."),
     "réellement": ("真正地", "Tu veux réellement apprendre le français ?"),
     "faire semblant": ("假裝", "Il fait semblant de dormir."),
     "la comédie": ("戲劇、演戲", "Elle adore la comédie."),
     "éternuer": ("打噴嚏", "Quand j’ai froid, j’éternue."),
-    "pisine": ("（應為 piscine）游泳池", "La piscine est fermée aujourd’hui."),
+    "piscine": ("游泳池", "La piscine est fermée aujourd’hui."),
 }
