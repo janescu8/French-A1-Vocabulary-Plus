@@ -15,7 +15,7 @@ from dictation_practice_8 import word_data as dictation_practice_8
 from une_crêpe_délicieuse import word_data as une_crêpe_délicieuse
 from trêve_énergétique import word_data as trêve_énergétique
 from la_foi import word_data as la_foi
-
+from fake_friends import word_data as fake_friends
 
 # 書籍選擇
 book_options = {
@@ -23,6 +23,7 @@ book_options = {
     "Une crêpe délicieuse": une_crêpe_délicieuse,
     "Trêve énergétique": trêve_énergétique,
     "foi 🛕 - ONE WORD INPUT #187": la_foi,
+    "15 French/English FAKE FRIENDS": fake_friends,
 }
 
 # 標題與選書
