@@ -1,0 +1,16 @@
+word_data = {
+    "actuel": ("目前的、當前的", "Le président actuel est très populaire."),
+    "courant": ("常見的、普遍的", "C’est une erreur très courante."),
+    "en fin": ("最後，在最後", "En fin de journée, je me repose."),
+    "finalement": ("最後，終於", "Finalement, j’ai compris la leçon."),
+    "en fait": ("其實", "En fait, je ne suis pas fatigué."),
+    "actuellement": ("現在、目前", "Je cherche un emploi actuellement."),
+    "plat principal": ("主菜", "Le plat principal est du poulet rôti."),
+    "une entrée": ("前菜", "Je prends une soupe en entrée."),
+    "bibliothèque": ("圖書館", "Je vais à la bibliothèque pour étudier."),
+    "librairie": ("書店", "J’achète un livre à la librairie."),
+    "pleurer": ("哭", "Il commence à pleurer sans raison."),
+    "crier": ("喊叫", "Elle crie parce qu’elle a peur."),
+    "université": ("大學", "Je suis étudiant à l’université."),
+    "collège": ("國中（有時是中學）", "Ma sœur est au collège."),
+}
