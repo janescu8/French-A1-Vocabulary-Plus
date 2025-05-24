@@ -11,17 +11,11 @@ from openai import OpenAI
 client = OpenAI(api_key=st.secrets["openai_api_key"])
 
 # 匯入所有書籍的單字庫
-from dictation_practice_8 import word_data as dictation_practice_8
-from une_crêpe_délicieuse import word_data as une_crêpe_délicieuse
-from trêve_énergétique import word_data as trêve_énergétique
-from la_foi import word_data as la_foi
+from may_24_a import word_data as may_24_a
 
 # 書籍選擇
 book_options = {
-    "Dictation Practice #8": dictation_practice_8,
-    "Une crêpe délicieuse": une_crêpe_délicieuse,
-    "Trêve énergétique": trêve_énergétique,
-    "foi 🛕 - ONE WORD INPUT #187": la_foi,
+    "may_24_a": may_24_a,
 }
 
 # 標題與選書
