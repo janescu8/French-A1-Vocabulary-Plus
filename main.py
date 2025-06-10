@@ -13,7 +13,7 @@ client = OpenAI(api_key=st.secrets["openai_api_key"])
 
 # 要載入的檔名清單
 book_names = [
-    "may_25_a",
+    "jun_10_a",
 ]
 
 # 動態匯入並建立 book_options 字典
